@@ -1,5 +1,6 @@
 # Docker
 
+
 # Build a Docker image
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
@@ -30,6 +31,8 @@ stages:
         tags: |
           $(tag)
     - task: Docker@2
-      inputs:
-       command: 'buildAndPush'
-       Dockerfile: '**/Dockerfile'
+        inputs:
+         containerRegistry: 'bitbarg regis'
+         repository: 'bitbarg/harchi'
+         command: 'buildAndPush'
+         Dockerfile: '**/Dockerfile'
