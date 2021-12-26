@@ -31,7 +31,7 @@ stages:
         tags: |
           $(tag)
     - task: Docker@2
-        inputs:
+      inputs:
          containerRegistry: 'bitbarg regis'
          repository: 'bitbarg/harchi'
          command: 'buildAndPush'
